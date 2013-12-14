@@ -1,0 +1,35 @@
+//
+// Prefix header for all source files of the 'MakePoem' target in the 'MakePoem' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define AnimationDuration 2.0
+#import "MBProgressHUD.h"
+
+
+#ifdef DEBUG
+
+#define DLog(fmt, ...) NSLog(fmt,##__VA_ARGS__);
+
+#else
+
+#define DLog(fmt, ...)
+
+#endif
+
+//随机数 from ~ to 之间(包括边界)
+#define GetRandomNumber(from,to) ((int)(from + arc4random() % (to-from+1)))
+
+#define ShareList [ShareSDK getShareListWithType:ShareTypeSinaWeibo, ShareTypeTencentWeibo, ShareTypeMail, \
+ShareTypeWeixiSession, ShareTypeWeixiTimeline, ShareTypeQQSpace, ShareTypeQQ, nil]
+//ShareTypeRenren,ShareTypePengyou,ShareTypeDouBan,ShareType163Weibo,ShareTypeKaixin,

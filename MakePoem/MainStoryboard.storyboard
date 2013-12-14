@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="SES-RJ-QDR">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="pj9-eS-n5B">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="SES-RJ-QDR" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="a1Z-8r-UOv">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QOh-9i-fuL" kind="relationship" relationship="rootViewController" id="ena-Kk-nPT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xeg-Ss-f6o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-321" y="141"/>
+        </scene>
+        <!--Make Poem View Controller - 舞文弄墨-->
+        <scene sceneID="EXU-gm-GQm">
+            <objects>
+                <viewController id="QOh-9i-fuL" customClass="MakePoemViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xng-Fv-fsu">
+                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="30" contentMode="scaleToFill" image="main.jpg" id="RkL-AN-8Lz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="222"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="春夏秋冬" borderStyle="roundedRect" placeholder="请输入2~8个中文字符" minimumFontSize="17" id="x30-5N-qq6">
+                                <rect key="frame" x="20" y="105" width="202" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lU5-zm-IRd">
+                                <rect key="frame" x="230" y="105" width="70" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="机器作诗" backgroundImage="btn_gray2.png">
+                                    <color key="titleColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="makePoemButtonClicked:" destination="QOh-9i-fuL" eventType="touchUpInside" id="Pgz-h3-PE9"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" id="Ywy-rC-bam">
+                                <rect key="frame" x="0.0" y="220" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="QOh-9i-fuL" id="1kI-z8-osH"/>
+                                    <outlet property="delegate" destination="QOh-9i-fuL" id="mWe-Wd-nEf"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="舞文弄墨" id="NFj-9r-MlR"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="_inputText" destination="x30-5N-qq6" id="EDt-F7-9C6"/>
+                        <outlet property="pickerCondition" destination="Ywy-rC-bam" id="cht-8m-sTh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dup-BU-hxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124" y="141"/>
+        </scene>
+        <!--Poem List View Controller - 机器作的诗-->
+        <scene sceneID="QHR-F9-8D8">
+            <objects>
+                <viewController storyboardIdentifier="PoemList_Identifier" id="h1p-Hw-RaD" customClass="PoemListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qAq-SI-tzp">
+                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="机器作的诗" id="wcP-kq-aLz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="eAY-rE-Ozy">
+                            <connections>
+                                <action selector="doSharing:" destination="h1p-Hw-RaD" id="ulh-xj-DmR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nS4-Mj-tNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567" y="141"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_gray2.png" width="83" height="34"/>
+        <image name="main.jpg" width="800" height="600"/>
+    </resources>
+    <classes>
+        <class className="MakePoemViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MakePoemViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="makePoemButtonClicked:" candidateClass="UIButton"/>
+                <relationship kind="action" name="touchesBegan:withEvent:" candidateClass="NSSet"/>
+                <relationship kind="outlet" name="_inputText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="_outputLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pickerCondition" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="PoemListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PoemListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doSharing:"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
